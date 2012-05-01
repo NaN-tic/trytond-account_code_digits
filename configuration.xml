@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="configuration_view_form">
+            <field name="model">account.configuration</field>
+            <field name="type">form</field>
+            <field name="inherit" ref="account.configuration_view_form"/>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <xpath expr="/form/field[@name='default_account_payable']" position="after">
+                    <label name="default_account_code_digits"/>
+                    <field name="default_account_code_digits"/>
+                </xpath>
+                ]]>
+            </field>
+        </record>
+    </data>
+</tryton>
