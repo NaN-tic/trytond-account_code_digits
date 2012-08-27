@@ -1,0 +1,87 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:account.account.create_chart_account.account,account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Dígitos código cuenta"
+
+msgctxt "field:account.account.create_chart_account.account,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:account.account.update_chart_account.init,account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Dígitos código cuenta"
+
+msgctxt "field:account.account.update_chart_account.init,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:account.configuration,default_account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Dígitos código cuenta"
+
+msgctxt "field:account.create_chart.account,account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Dígitos código cuenta"
+
+msgctxt "field:account.update_chart.start,account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Dígitos código cuenta"
+
+msgctxt "help:account.account.create_chart_account.account,account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr "Número de dígitos para las cuentas."
+
+msgctxt "help:account.account.update_chart_account.init,account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr "Número de dígitos para las cuentas."
+
+msgctxt "help:account.configuration,default_account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr "Número de dígitos para las cuentas."
+
+msgctxt "help:account.create_chart.account,account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr "Número de dígitos para las cuentas."
+
+msgctxt "help:account.update_chart.start,account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr "Número de dígitos para las cuentas."
+
+msgctxt "wizard_button:account.create_chart,account,create_account:"
+msgid "Create"
+msgstr "Crear"
+
+msgctxt "wizard_button:account.create_chart,account,end:"
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgctxt "wizard_button:account.create_chart,properties,create_properties:"
+msgid "Create"
+msgstr "Crear"
+
+msgctxt "wizard_button:account.create_chart,properties,end:"
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgctxt "wizard_button:account.create_chart,start,account:"
+msgid "Ok"
+msgstr "Aceptar"
+
+msgctxt "wizard_button:account.create_chart,start,end:"
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgctxt "wizard_button:account.update_chart,start,end:"
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgctxt "wizard_button:account.update_chart,start,update:"
+msgid "Update"
+msgstr "Actualizar"
+
+msgctxt "wizard_button:account.update_chart,succeed,end:"
+msgid "Ok"
+msgstr "Aceptar"

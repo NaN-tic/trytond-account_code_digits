@@ -22,5 +22,6 @@ used for account codes.''',
         'configuration.xml',
     ],
     'translation': [
+        'locale/es_ES.po',
     ],
 }

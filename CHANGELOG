@@ -1,3 +1,4 @@
+* Add es_ES locale
 * Add tests
 * FIX configuration XML data
 * _get_account_value: res['code'] is None
