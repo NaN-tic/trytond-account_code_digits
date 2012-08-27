@@ -11,7 +11,7 @@ class Configuration(ModelSingleton, ModelSQL, ModelView):
     _name = 'account.configuration'
 
     default_account_code_digits = fields.Property(
-        fields.Integer('Account Code Digits', help='Number of digits to be '
-            'used for all non-view accounts.'))
+        fields.Numeric('Account Code Digits', digits=(16, 0),
+            help='Number of digits to be used for all non-view accounts.'))
 
 Configuration()
