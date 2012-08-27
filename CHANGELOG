@@ -1,4 +1,4 @@
-* setup.py trytond prefix
+* setup.py trytond prefix. Change 2.4.0 version
 * Add ca_ES locale
 * Add es_ES locale
 * Add tests
