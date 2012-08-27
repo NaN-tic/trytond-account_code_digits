@@ -21,8 +21,8 @@ class AccountTemplate(ModelSQL, ModelView):
 
 AccountTemplate()
 
-class CreateChartAccountAccount(ModelView):
-    _name = 'account.account.create_chart_account.account'
+class CreateChartAccount(ModelView):
+    _name = 'account.create_chart.account'
 
     account_code_digits = fields.Integer('Account Code Digits', help='Number '
             'of digits to be used for all non-view accounts.')
@@ -32,11 +32,11 @@ class CreateChartAccountAccount(ModelView):
         config = config_obj.browse(1)
         return config.default_account_code_digits
 
-CreateChartAccountAccount()
+CreateChartAccount()
 
 
-class CreateChartAccount(Wizard):
-    _name = 'account.account.create_chart_account'
+class CreateChart(Wizard):
+    _name = 'account.create_chart'
 
     def _action_create_account(self, datas):
         digits = datas['form']['account_code_digits']
@@ -46,11 +46,11 @@ class CreateChartAccount(Wizard):
                 })
         return super(CreateChartAccount, self)._action_create_account(datas)
 
-CreateChartAccount()
+CreateChart()
 
 
-class UpdateChartAccountInit(ModelView):
-    _name = 'account.account.update_chart_account.init'
+class UpdateChartStart(ModelView):
+    _name = 'account.update_chart.start'
 
     account_code_digits = fields.Integer('Account Code Digits', help='Number '
             'of digits to be used for all non-view accounts.')
@@ -60,11 +60,11 @@ class UpdateChartAccountInit(ModelView):
         config = config_obj.browse(1)
         return config.default_account_code_digits
 
-UpdateChartAccountInit()
+UpdateChartStart()
 
 
-class UpdateChartAccount(Wizard):
-    _name = 'account.account.update_chart_account'
+class UpdateChart(Wizard):
+    _name = 'account.update_chart'
 
     def _action_update_account(self, datas):
         digits = datas['form']['account_code_digits']
@@ -74,5 +74,4 @@ class UpdateChartAccount(Wizard):
                 })
         return super(CreateChartAccount, self)._action_update_account(datas)
 
-UpdateChartAccount()
-
+UpdateChart()
