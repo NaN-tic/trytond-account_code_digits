@@ -3,7 +3,7 @@
 #the full copyright notices and license terms.
 {
     'name': 'Account Code Digits',
-    'version': '2.5.0',
+    'version': '2.4.0',
     'author': 'NaN·tic',
     'email': 'info@nan-tic.com',
     'website': 'http://www.nan-tic.com/',
