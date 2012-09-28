@@ -2,22 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "field:account.account.create_chart_account.account,account_code_digits:"
-msgid "Account Code Digits"
-msgstr "Dígitos código cuenta"
-
-msgctxt "field:account.account.create_chart_account.account,id:"
-msgid "ID"
-msgstr "ID"
-
-msgctxt "field:account.account.update_chart_account.init,account_code_digits:"
-msgid "Account Code Digits"
-msgstr "Dígitos código cuenta"
-
-msgctxt "field:account.account.update_chart_account.init,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:account.configuration,default_account_code_digits:"
 msgid "Account Code Digits"
 msgstr "Dígitos código cuenta"
@@ -30,25 +14,25 @@ msgctxt "field:account.update_chart.start,account_code_digits:"
 msgid "Account Code Digits"
 msgstr "Dígitos código cuenta"
 
-msgctxt "help:account.account.create_chart_account.account,account_code_digits:"
-msgid "Number of digits to be used for all non-view accounts."
-msgstr "Número de dígitos para las cuentas."
-
-msgctxt "help:account.account.update_chart_account.init,account_code_digits:"
-msgid "Number of digits to be used for all non-view accounts."
-msgstr "Número de dígitos para las cuentas."
-
 msgctxt "help:account.configuration,default_account_code_digits:"
 msgid "Number of digits to be used for all non-view accounts."
 msgstr "Número de dígitos para las cuentas."
 
 msgctxt "help:account.create_chart.account,account_code_digits:"
-msgid "Number of digits to be used for all non-view accounts."
-msgstr "Número de dígitos para las cuentas."
+msgid ""
+"Number of digits to be used for all non-view accounts. (Defined at "
+"Account/Account Configuration/Account Code Digits)"
+msgstr ""
+"Número de dígitos usados para las cuentas que no sean vista (Definido a "
+"Contabilidad/Configuración contable/Dígitos código cuenta)"
 
 msgctxt "help:account.update_chart.start,account_code_digits:"
-msgid "Number of digits to be used for all non-view accounts."
-msgstr "Número de dígitos para las cuentas."
+msgid ""
+"Number of digits to be used for all non-view accounts. (Defined at "
+"Account/Account Configuration/Account Code Digits)"
+msgstr ""
+"Número de dígitos usados para las cuentas que no sean vista (Definido a "
+"Contabilidad/Configuración contable/Dígitos código cuenta)"
 
 msgctxt "wizard_button:account.create_chart,account,create_account:"
 msgid "Create"
