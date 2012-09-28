@@ -27,8 +27,9 @@ AccountTemplate()
 class CreateChartAccount(ModelView):
     _name = 'account.create_chart.account'
 
-    account_code_digits = fields.Integer('Account Code Digits', help='Number '
-            'of digits to be used for all non-view accounts.')
+    account_code_digits = fields.Integer('Account Code Digits', readonly=True,
+        help='Number of digits to be used for all non-view accounts. ' \
+            '(Defined at Account/Account Configuration/Account Code Digits)')
 
     def default_account_code_digits(self):
         config_obj = Pool().get('account.configuration')
@@ -55,8 +56,9 @@ CreateChart()
 class UpdateChartStart(ModelView):
     _name = 'account.update_chart.start'
 
-    account_code_digits = fields.Integer('Account Code Digits', help='Number '
-            'of digits to be used for all non-view accounts.')
+    account_code_digits = fields.Integer('Account Code Digits', readonly=True,
+        help='Number of digits to be used for all non-view accounts. ' \
+            '(Defined at Account/Account Configuration/Account Code Digits)')
 
     def default_account_code_digits(self):
         config_obj = Pool().get('account.configuration')
