@@ -13,10 +13,13 @@ class AccountTemplate(ModelSQL, ModelView):
         res = super(AccountTemplate, self)._get_account_value(template, account)
         config_obj = Pool().get('account.configuration')
         digits = config_obj.browse(1).default_account_code_digits
-        if res.get('code'):
-            digits = digits - len(res['code'])
+        if res.get('code') and res.get('kind') != 'view':
+            digits = int(digits - len(res['code']))
             if digits > 0:
-                res['code'] = res['code'].replace('%', '0'*digits)
+                if '%' in res['code']:
+                    res['code'] = res['code'].replace('%', '0'*digits)
+                else:
+                    res['code'] = res['code'] + '0'*digits
         return res
 
 AccountTemplate()
