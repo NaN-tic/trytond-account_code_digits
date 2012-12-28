@@ -27,13 +27,13 @@ for dep in info.get('depends', []):
 requires.append('trytond >= %s.%s, < %s.%s' %
         (major_version, minor_version, major_version, minor_version + 1))
 
-setup(name='trytonzz_account_code_digits',
+setup(name='nantic_account_code_digits',
     version=info.get('version', '0.0.1'),
     description='Tryton module to expand account codes',
     author='NaN·tic',
     author_email='info@NaN-tic.com',
     url='http://www.nan-tic.com',
-    download_url="https://bitbucket.org/zikzakmedia/trytond-account_code_digits",
+    download_url="https://bitbucket.org/trytonspain/trytond-account_code_digits",
     package_dir={'trytond.modules.account_code_digits': '.'},
     packages=[
         'trytond.modules.account_code_digits',
