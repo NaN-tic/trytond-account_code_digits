@@ -20,8 +20,8 @@ de ocho dígitos:
 * Si ponemos el código *4300%1* nos remplazará el *%* por ceros hasta completar
   los ocho dígitos: 43000001
 
-Módulos que dependen
-====================
+Módulos de los que depende
+==========================
 
 Instalados
 ----------
