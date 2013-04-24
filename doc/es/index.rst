@@ -17,16 +17,3 @@ de ocho dígitos:
 * Si ponemos el código *4300* nos añadirá cuatro ceros al final: 43000000
 * Si ponemos el código *4300%1* nos remplazará el *%* por ceros hasta completar
   los ocho dígitos: 43000001
-
-Dependencias
-------------
-
-* Contabilidad_
-* Empresa_
-* Moneda_
-* Terceros_
-
-.. _Contabilidad: ../account/index.html
-.. _Empresa: ../company/index.html
-.. _Moneda: ../currency/index.html
-.. _Terceros: ../party/index.html
