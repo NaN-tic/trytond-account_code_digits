@@ -3,37 +3,16 @@
 The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
 <tryton>
     <data>
-
         <record model="ir.ui.view" id="create_chart_account_view_form">
             <field name="model">account.create_chart.account</field>
             <field name="inherit" ref="account.create_chart_account_view_form"/>
-            <field name="arch" type="xml">
-                <![CDATA[
-                <data>
-                    <xpath expr="/form/field[@name='account_template']" position="after">
-                        <label name="account_code_digits"/>
-                        <field name="account_code_digits"/>
-                    </xpath>
-                </data>
-                ]]>
-            </field>
+            <field name="name">create_chart_account_form</field>
         </record>
-
         <record model="ir.ui.view" id="update_chart_start_view_form">
             <field name="model">account.update_chart.start</field>
             <field name="inherit" ref="account.update_chart_start_view_form"/>
-            <field name="arch" type="xml">
-                <![CDATA[
-                <data>
-                    <xpath expr="/form/field[@name='account']" position="after">
-                        <label name="account_code_digits"/>
-                        <field name="account_code_digits"/>
-                    </xpath>
-                </data>
-                ]]>
-            </field>
+            <field name="name">update_chart_start_form</field>
         </record>
-
     </data>
 </tryton>
 
