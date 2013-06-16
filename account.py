@@ -16,12 +16,8 @@ class AccountTemplate:
         res = super(AccountTemplate, self)._get_account_value(account)
         Config = Pool().get('account.configuration')
         digits = Config.browse([1])[0].default_account_code_digits
-        print res
-        print res.get('code')
-        print type(res.get('code'))
         if res.get('code') and res.get('kind') != 'view' and digits != None:
             digits = int(digits - len(res['code']))
-            print type(digits)
             if digits > 0:
                 if '%' in res['code']:
                     res['code'] = res['code'].replace('%', '0'*digits)
@@ -33,9 +29,9 @@ class AccountTemplate:
 class CreateChartAccount:
     __name__ = 'account.create_chart.account'
 
-    account_code_digits = fields.Integer('Account Code Digits', readonly=True,
-        help='Number of digits to be used for all non-view accounts. ' \
-            '(Defined at Account/Account Configuration/Account Code Digits)')
+    account_code_digits = fields.Integer('Account Code Digits',
+        help='Number of digits to be used for all non-view accounts. '
+        '(Defined at Account/Account Configuration/Account Code Digits)')
 
     @staticmethod
     def default_account_code_digits():
@@ -59,9 +55,9 @@ class CreateChart:
 class UpdateChartStart:
     __name__ = 'account.update_chart.start'
 
-    account_code_digits = fields.Integer('Account Code Digits', readonly=True,
-        help='Number of digits to be used for all non-view accounts. ' \
-            '(Defined at Account/Account Configuration/Account Code Digits)')
+    account_code_digits = fields.Integer('Account Code Digits',
+        help='Number of digits to be used for all non-view accounts. '
+        '(Defined at Account/Account Configuration/Account Code Digits)')
 
     @staticmethod
     def default_account_code_digits():
