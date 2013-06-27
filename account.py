@@ -30,49 +30,45 @@ class CreateChartAccount:
     __name__ = 'account.create_chart.account'
 
     account_code_digits = fields.Integer('Account Code Digits',
-        help='Number of digits to be used for all non-view accounts. '
-        '(Defined at Account/Account Configuration/Account Code Digits)')
+        help='Number of digits to be used for all non-view accounts.')
 
     @staticmethod
     def default_account_code_digits():
-        Config = Pool().get('account.configuration')
-        config = Config.browse([1])[0]
-        return config.default_account_code_digits
+        config = Pool().get('account.configuration').get_singleton()
+        return config.default_account_code_digits if config else None
 
 
 class CreateChart:
     __name__ = 'account.create_chart'
 
-    def _action_create_account(self, datas):
-        digits = datas['form']['account_code_digits']
+    def transition_create_account(self):
+        digits = self.account.account_code_digits
         Config = Pool().get('account.configuration')
-        Config.write(1, {
-                'default_account_code_digits': digits
-                })
-        return super(CreateChartAccount, self)._action_create_account(datas)
+        config = Config.get_singleton() or Config()
+        config.default_account_code_digits = digits
+        config.save()
+        return super(CreateChart, self).transition_create_account()
 
 
 class UpdateChartStart:
     __name__ = 'account.update_chart.start'
 
     account_code_digits = fields.Integer('Account Code Digits',
-        help='Number of digits to be used for all non-view accounts. '
-        '(Defined at Account/Account Configuration/Account Code Digits)')
+        help='Number of digits to be used for all non-view accounts.')
 
     @staticmethod
     def default_account_code_digits():
-        Config = Pool().get('account.configuration')
-        config = Config.browse([1])[0]
-        return config.default_account_code_digits
+        config = Pool().get('account.configuration').get_singleton()
+        return config.default_account_code_digits if config else None
 
 
 class UpdateChart:
     __name__ = 'account.update_chart'
 
-    def _action_update_account(self, datas):
-        digits = datas['form']['account_code_digits']
+    def transition_update(self, datas):
+        digits = self.start.account_code_digits
         Config = Pool().get('account.configuration')
-        Config.write(1, {
-                'default_account_code_digits': digits
-                })
-        return super(CreateChartAccount, self)._action_update_account(datas)
+        config = Config.get_singleton() or Config()
+        config.default_account_code_digits = digits
+        config.save()
+        return super(UpdateChart, self).transition_update()
