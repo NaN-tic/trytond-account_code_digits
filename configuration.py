@@ -15,4 +15,3 @@ class Configuration:
     default_account_code_digits = fields.Property(
         fields.Numeric('Account Code Digits', digits=(16, 0),
             help='Number of digits to be used for all non-view accounts.'))
-
