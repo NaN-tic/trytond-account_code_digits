@@ -24,9 +24,9 @@ class AccountTemplate:
             print type(digits)
             if digits > 0:
                 if '%' in res['code']:
-                    res['code'] = res['code'].replace('%', '0'*digits)
+                    res['code'] = res['code'].replace('%', '0' * (digits + 1))
                 else:
-                    res['code'] = res['code'] + '0'*digits
+                    res['code'] = res['code'] + '0' * digits
         return res
 
 
