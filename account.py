@@ -1,5 +1,5 @@
 #This file is part account_code_digits module for Tryton.
-#The COPYRIGHT file at the top level of this repository contains 
+#The COPYRIGHT file at the top level of this repository contains
 #the full copyright notices and license terms.
 from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
@@ -65,7 +65,7 @@ class UpdateChartStart:
 class UpdateChart:
     __name__ = 'account.update_chart'
 
-    def transition_update(self, datas):
+    def transition_update(self):
         digits = self.start.account_code_digits
         Config = Pool().get('account.configuration')
         config = Config.get_singleton() or Config()
