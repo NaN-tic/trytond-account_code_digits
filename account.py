@@ -18,11 +18,10 @@ class AccountTemplate:
         digits = Config.browse([1])[0].default_account_code_digits
         if res.get('code') and res.get('kind') != 'view' and digits != None:
             digits = int(digits - len(res['code']))
-            if digits > 0:
-                if '%' in res['code']:
-                    res['code'] = res['code'].replace('%', '0' * (digits + 1))
-                else:
-                    res['code'] = res['code'] + '0' * digits
+            if '%' in res['code']:
+                res['code'] = res['code'].replace('%', '0' * (digits + 1))
+            else:
+                res['code'] = res['code'] + '0' * digits
         return res
 
 
