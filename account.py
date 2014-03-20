@@ -4,7 +4,7 @@
 from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
 
-__all__ = ['AccountTemplate', 'CreateChartAccount', 'CreateChart',
+__all__ = ['AccountTemplate', 'Account', 'CreateChartAccount', 'CreateChart',
     'UpdateChartStart', 'UpdateChart']
 __metaclass__ = PoolMeta
 
@@ -23,6 +23,36 @@ class AccountTemplate:
             else:
                 res['code'] = res['code'] + '0' * digits
         return res
+
+
+class Account:
+    __name__ = 'account.account'
+
+    @classmethod
+    def __setup__(cls):
+        super(Account, cls).__setup__()
+        cls._error_messages.update({
+                'invalid_code_digits': ('The number of code digits '
+                    ' "%(account_digits)d" of account "%(account)s" must be '
+                    '"%(digits)d".'),
+                })
+
+    @classmethod
+    def validate(cls, accounts):
+        config = Pool().get('account.configuration').get_singleton()
+        super(Account, cls).validate(accounts)
+        if (config and config.default_account_code_digits and
+                config.force_digits):
+            for account in accounts:
+                account.check_digits(config.default_account_code_digits)
+
+    def check_digits(self, digits):
+        if self.kind != 'view' and len(self.code) != digits:
+            self.raise_user_error('invalid_code_digits', error_args={
+                    'account_digits': len(self.code),
+                    'account': self.rec_name,
+                    'digits': digits,
+                    })
 
 
 class CreateChartAccount:

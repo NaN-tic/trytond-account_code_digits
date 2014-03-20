@@ -3,6 +3,8 @@
     <xpath expr="/form/field[@name='default_account_payable']" position="after">
         <label name="default_account_code_digits"/>
         <field name="default_account_code_digits"/>
+        <label name="force_digits"/>
+        <field name="force_digits"/>
     </xpath>
 </data>
 
