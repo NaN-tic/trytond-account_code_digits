@@ -33,8 +33,8 @@ class Account:
         super(Account, cls).__setup__()
         cls._error_messages.update({
                 'invalid_code_digits': ('The number of code digits '
-                    ' "%(account_digits)d" of account "%(account)s" must be '
-                    '"%(digits)d".'),
+                    '%(account_digits)d of account "%(account)s" must be '
+                    '%(digits)d.'),
                 })
 
     @classmethod
@@ -47,9 +47,11 @@ class Account:
                 account.check_digits(config.default_account_code_digits)
 
     def check_digits(self, digits):
-        if self.kind != 'view' and len(self.code) != digits:
+        #Only the first item of code is checked: "570000 (1)" -> "570000"
+        code = self.code.split(' ')[0]
+        if self.kind != 'view' and len(code) != digits:
             self.raise_user_error('invalid_code_digits', error_args={
-                    'account_digits': len(self.code),
+                    'account_digits': len(code),
                     'account': self.rec_name,
                     'digits': digits,
                     })
