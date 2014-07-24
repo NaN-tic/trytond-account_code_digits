@@ -73,11 +73,12 @@ class CreateChart:
     __name__ = 'account.create_chart'
 
     def transition_create_account(self):
-        digits = self.account.account_code_digits
-        Config = Pool().get('account.configuration')
-        config = Config.get_singleton() or Config()
-        config.default_account_code_digits = digits
-        config.save()
+        if hasattr(self.account, 'account_code_digits'):
+            digits = self.account.account_code_digits
+            Config = Pool().get('account.configuration')
+            config = Config.get_singleton() or Config()
+            config.default_account_code_digits = digits
+            config.save()
         return super(CreateChart, self).transition_create_account()
 
 
