@@ -22,6 +22,9 @@ class AccountTemplate:
                 res['code'] = res['code'].replace('%', '0' * (digits + 1))
             else:
                 res['code'] = res['code'] + '0' * digits
+        # Don't upgrade code if the correct digits value is computed
+        if account and res.get('code', '') == account.code:
+            del res['code']
         return res
 
 
