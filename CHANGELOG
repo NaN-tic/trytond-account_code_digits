@@ -2,7 +2,9 @@ Version 3.4.0 - 2014-11-03
 
 Version 3.2.0 - 2014-05-22
 
-Version 3.0.0 - 2014-10-25
+Version 3.0.0 - 2013-10-25
+
+Version 2.8.0 - 2013-04-26
 * Active Records
 * setup.py trytond prefix. Change 2.4.0 version
 * Add ca_ES locale
