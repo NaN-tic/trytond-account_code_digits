@@ -6,10 +6,10 @@ from trytond.pool import Pool, PoolMeta
 
 __all__ = ['AccountTemplate', 'Account', 'CreateChartAccount', 'CreateChart',
     'UpdateChartStart', 'UpdateChart']
-__metaclass__ = PoolMeta
 
 
 class AccountTemplate:
+    __metaclass__ = PoolMeta
     __name__ = 'account.account.template'
 
     def _get_account_value(self, account=None):
@@ -29,6 +29,7 @@ class AccountTemplate:
 
 
 class Account:
+    __metaclass__ = PoolMeta
     __name__ = 'account.account'
 
     @classmethod
@@ -61,6 +62,7 @@ class Account:
 
 
 class CreateChartAccount:
+    __metaclass__ = PoolMeta
     __name__ = 'account.create_chart.account'
 
     account_code_digits = fields.Integer('Account Code Digits',
@@ -73,6 +75,7 @@ class CreateChartAccount:
 
 
 class CreateChart:
+    __metaclass__ = PoolMeta
     __name__ = 'account.create_chart'
 
     def transition_create_account(self):
@@ -86,6 +89,7 @@ class CreateChart:
 
 
 class UpdateChartStart:
+    __metaclass__ = PoolMeta
     __name__ = 'account.update_chart.start'
 
     account_code_digits = fields.Integer('Account Code Digits',
@@ -98,6 +102,7 @@ class UpdateChartStart:
 
 
 class UpdateChart:
+    __metaclass__ = PoolMeta
     __name__ = 'account.update_chart'
 
     def transition_update(self):

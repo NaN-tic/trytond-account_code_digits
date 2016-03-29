@@ -7,10 +7,10 @@ from trytond.pyson import Eval
 
 
 __all__ = ['Configuration']
-__metaclass__ = PoolMeta
 
 
 class Configuration:
+    __metaclass__ = PoolMeta
     __name__ = 'account.configuration'
 
     default_account_code_digits = fields.Property(
