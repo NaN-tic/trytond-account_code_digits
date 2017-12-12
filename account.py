@@ -4,18 +4,18 @@
 from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
 
-__all__ = ['Configuration', 'AccountTemplate', 'Account',
-    'CreateChartAccount', 'CreateChart', 'UpdateChartStart', 'UpdateChart']
+__all__ = ['Configuration', 'ConfigurationDefaultAccount', 'AccountTemplate',
+    'Account', 'CreateChartAccount', 'CreateChart', 'UpdateChartStart',
+    'UpdateChart']
 
 
 class Configuration:
     __metaclass__ = PoolMeta
     __name__ = 'account.configuration'
 
-    default_account_code_digits = fields.MultiValue(
-        fields.Integer(
-            "Account Code Digits",
-            help='Number of digits to be used for all non-view accounts.'))
+    default_account_code_digits = fields.MultiValue(fields.Integer(
+        'Account Code Digits',
+        help='Number of digits to be used for all non-view accounts.'))
     force_digits = fields.Boolean('Force Digits',
         help='If marked it won\'t be allowed to create a non-view account'
         ' with a diferent number of digits than the number used on the '
