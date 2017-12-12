@@ -4,18 +4,15 @@ Installing trytond_account_code_digits
 Prerequisites
 -------------
 
- * Python 2.5 or later (http://www.python.org/)
+ * Python 2.7 or later (http://www.python.org/)
  * python-dateutil (http://labix.org/python-dateutil)
  * trytond (http://www.tryton.org/)
- * trytond_company (http://www.tryton.org/)
- * trytond_party (http://www.tryton.org/)
- * trytond_currency (http://www.tryton.org/)
  * trytond_account (http://www.tryton.org/)
 
 Installation
 ------------
 
-Once you've downloaded and unpacked the trytond_account_code_digits source 
+Once you've downloaded and unpacked the trytond_account_code_digits source
 release, enter the directory where the archive was unpacked, and run:
 
     python setup.py install

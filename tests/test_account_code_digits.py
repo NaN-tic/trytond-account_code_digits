@@ -16,7 +16,7 @@ class AccountCodeDigitsTestCase(ModuleTestCase):
     module = 'account_code_digits'
 
     @with_transaction()
-    def test0010_force_digits(self):
+    def test_force_digits(self):
         'Test force digits'
         pool = Pool()
         Account = pool.get('account.account')
@@ -51,5 +51,5 @@ class AccountCodeDigitsTestCase(ModuleTestCase):
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-        AccountCodeDigitsTestCase))
+            AccountCodeDigitsTestCase))
     return suite
