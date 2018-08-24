@@ -9,8 +9,7 @@ __all__ = ['Configuration', 'ConfigurationDefaultAccount', 'AccountTemplate',
     'UpdateChart']
 
 
-class Configuration:
-    __metaclass__ = PoolMeta
+class Configuration(metaclass=PoolMeta):
     __name__ = 'account.configuration'
 
     default_account_code_digits = fields.MultiValue(fields.Integer(
@@ -29,8 +28,7 @@ class Configuration:
         return super(Configuration, cls).multivalue_model(field)
 
 
-class ConfigurationDefaultAccount:
-    __metaclass__ = PoolMeta
+class ConfigurationDefaultAccount(metaclass=PoolMeta):
     __name__ = 'account.configuration.default_account'
     default_account_code_digits = fields.Integer(
         "Account Code Digits",
@@ -41,8 +39,7 @@ class ConfigurationDefaultAccount:
             ])
 
 
-class AccountTemplate:
-    __metaclass__ = PoolMeta
+class AccountTemplate(metaclass=PoolMeta):
     __name__ = 'account.account.template'
 
     def _get_account_value(self, account=None):
@@ -67,8 +64,7 @@ class AccountTemplate:
         return res
 
 
-class Account:
-    __metaclass__ = PoolMeta
+class Account(metaclass=PoolMeta):
     __name__ = 'account.account'
 
     @classmethod
@@ -101,8 +97,7 @@ class Account:
                     })
 
 
-class CreateChartAccount:
-    __metaclass__ = PoolMeta
+class CreateChartAccount(metaclass=PoolMeta):
     __name__ = 'account.create_chart.account'
 
     account_code_digits = fields.Integer('Account Code Digits',
@@ -116,8 +111,7 @@ class CreateChartAccount:
         return config.default_account_code_digits
 
 
-class CreateChart:
-    __metaclass__ = PoolMeta
+class CreateChart(metaclass=PoolMeta):
     __name__ = 'account.create_chart'
 
     def transition_create_account(self):
@@ -131,8 +125,7 @@ class CreateChart:
         return super(CreateChart, self).transition_create_account()
 
 
-class UpdateChartStart:
-    __metaclass__ = PoolMeta
+class UpdateChartStart(metaclass=PoolMeta):
     __name__ = 'account.update_chart.start'
 
     account_code_digits = fields.Integer('Account Code Digits',
@@ -146,8 +139,7 @@ class UpdateChartStart:
         return config.default_account_code_digits
 
 
-class UpdateChart:
-    __metaclass__ = PoolMeta
+class UpdateChart(metaclass=PoolMeta):
     __name__ = 'account.update_chart'
 
     def transition_update(self):
