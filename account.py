@@ -3,6 +3,8 @@
 # the full copyright notices and license terms.
 from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
+from trytond.i18n import gettext
+from trytond.exceptions import UserError
 
 __all__ = ['Configuration', 'ConfigurationDefaultAccount', 'AccountTemplate',
     'Account', 'CreateChartAccount', 'CreateChart', 'UpdateChartStart',
@@ -68,15 +70,6 @@ class Account(metaclass=PoolMeta):
     __name__ = 'account.account'
 
     @classmethod
-    def __setup__(cls):
-        super(Account, cls).__setup__()
-        cls._error_messages.update({
-                'invalid_code_digits': ('The number of code digits '
-                    '%(account_digits)d of account "%(account)s" must be '
-                    '%(digits)d.'),
-                })
-
-    @classmethod
     def validate(cls, accounts):
         pool = Pool()
         Config = pool.get('account.configuration')
@@ -90,12 +83,11 @@ class Account(metaclass=PoolMeta):
         # Only the first item of code is checked: "570000 (1)" -> "570000"
         code = self.code.split(' ')[0]
         if self.kind != 'view' and len(code) != digits:
-            self.raise_user_error('invalid_code_digits', error_args={
-                    'account_digits': len(code),
-                    'account': self.rec_name,
-                    'digits': digits,
-                    })
-
+            raise UserError(gettext(
+                'account_code_digits.invalid_code_digits',
+                    account_digits=len(code),
+                    account=self.rec_name,
+                    digits=digits))
 
 class CreateChartAccount(metaclass=PoolMeta):
     __name__ = 'account.create_chart.account'
