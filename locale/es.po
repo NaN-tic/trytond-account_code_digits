@@ -1,14 +1,6 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
-
-msgctxt "error:account.account:"
-msgid ""
-"The number of code digits %(account_digits)d of account \"%(account)s\" must"
-" be %(digits)d."
-msgstr ""
-"El número de dígitos %(account_digits)d del código de la cuenta "
-"\"%(account)s\" debería ser %(digits)d."
 
 msgctxt "field:account.configuration,default_account_code_digits:"
 msgid "Account Code Digits"
@@ -17,6 +9,11 @@ msgstr "Dígitos del código de la cuenta"
 msgctxt "field:account.configuration,force_digits:"
 msgid "Force Digits"
 msgstr "Forzar dígitos"
+
+msgctxt ""
+"field:account.configuration.default_account,default_account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Dígitos del código de la cuenta"
 
 msgctxt "field:account.create_chart.account,account_code_digits:"
 msgid "Account Code Digits"
@@ -51,6 +48,14 @@ msgid "Number of digits to be used for all non-view accounts."
 msgstr ""
 "Número de dígitos usados para las cuentas que no sean vista (definido en "
 "Contabilidad/Configuración/Contable/Dígitos del código de la cuenta)."
+
+msgctxt "model:ir.message,text:invalid_code_digits"
+msgid ""
+"The number of code digits %(account_digits)d of account \"%(account)s\" must"
+" be %(digits)d."
+msgstr ""
+"El número de dígitos del código %(account_digits)d de la cuenta "
+"\"%(account)s\" debe ser %(digits)d."
 
 msgctxt "view:account.configuration:"
 msgid "Account Chart"

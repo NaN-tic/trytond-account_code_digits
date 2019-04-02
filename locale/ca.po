@@ -1,14 +1,6 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
-
-msgctxt "error:account.account:"
-msgid ""
-"The number of code digits %(account_digits)d of account \"%(account)s\" must"
-" be %(digits)d."
-msgstr ""
-"El número de dígits %(account_digits)d del codi del compte \"%(account)s\" "
-"hauria de ser %(digits)d."
 
 msgctxt "field:account.configuration,default_account_code_digits:"
 msgid "Account Code Digits"
@@ -17,6 +9,11 @@ msgstr "Dígits del codi del compte"
 msgctxt "field:account.configuration,force_digits:"
 msgid "Force Digits"
 msgstr "Força dígits"
+
+msgctxt ""
+"field:account.configuration.default_account,default_account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Dígits del codi del compte"
 
 msgctxt "field:account.create_chart.account,account_code_digits:"
 msgid "Account Code Digits"
@@ -53,9 +50,17 @@ msgstr ""
 "Número de dígits pels comptes que no són vista (definit a "
 "Comptabilitat/Configuració/Comptable/Dígits del codi del compte)."
 
+msgctxt "model:ir.message,text:invalid_code_digits"
+msgid ""
+"The number of code digits %(account_digits)d of account \"%(account)s\" must"
+" be %(digits)d."
+msgstr ""
+"El nombre de dígits del codi %(account_digits)d del compte \"%(account)s\" "
+"ha de ser %(digits)d."
+
 msgctxt "view:account.configuration:"
 msgid "Account Chart"
-msgstr ""
+msgstr "Pla comptable"
 
 msgctxt "wizard_button:account.create_chart,account,create_account:"
 msgid "Create"
