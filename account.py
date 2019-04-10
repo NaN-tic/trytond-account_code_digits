@@ -53,7 +53,7 @@ class AccountTemplate(metaclass=PoolMeta):
 
         digits = config.default_account_code_digits
         if (res.get('code')
-                and res.get('kind') != 'view'
+                and res.get('type') != None
                 and digits is not None):
             digits = int(digits - len(res['code']))
             if '%' in res['code']:
@@ -82,7 +82,8 @@ class Account(metaclass=PoolMeta):
     def check_digits(self, digits):
         # Only the first item of code is checked: "570000 (1)" -> "570000"
         code = self.code.split(' ')[0]
-        if self.kind != 'view' and len(code) != digits:
+        import pdb; pdb.set_trace()
+        if self.type != None and len(code) != digits:
             raise UserError(gettext(
                 'account_code_digits.invalid_code_digits',
                     account_digits=len(code),

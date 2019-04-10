@@ -30,10 +30,10 @@ class AccountCodeDigitsTestCase(ModuleTestCase):
             config.save()
 
             view, = Account.search([
-                    ('kind', '=', 'view'),
+                    ('type', '=', None),
                     ], limit=1)
             non_view, = Account.search([
-                    ('kind', '!=', 'view'),
+                    ('type', '!=', 'None'),
                     ], limit=1)
 
             self.assertRaises(UserError, Account.write, [non_view],
