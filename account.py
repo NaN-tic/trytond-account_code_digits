@@ -50,10 +50,10 @@ class AccountTemplate(metaclass=PoolMeta):
         config = Config(1)
 
         res = super(AccountTemplate, self)._get_account_value(account)
-
         digits = config.default_account_code_digits
+
         if (res.get('code')
-                and res.get('type') != None
+                and ('type' not in res or res.get('type') != None)
                 and digits is not None):
             digits = int(digits - len(res['code']))
             if '%' in res['code']:
