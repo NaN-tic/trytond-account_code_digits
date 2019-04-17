@@ -29,9 +29,10 @@ class AccountCodeDigitsTestCase(ModuleTestCase):
             config.force_digits = True
             config.save()
 
-            view, = Account.search([
-                    ('type', '=', None),
-                    ], limit=1)
+            view = Account()
+            view.name = 'view'
+            view.code = '0'
+            view.save()
             non_view, = Account.search([
                     ('type', '!=', 'None'),
                     ], limit=1)
