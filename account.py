@@ -79,7 +79,7 @@ class Account(metaclass=PoolMeta):
     def check_digits(self, digits):
         # Only the first item of code is checked: "570000 (1)" -> "570000"
         code = self.code.split(' ')[0]
-        if self.type != None and len(code) != digits:
+        if not self.childs and len(code) != digits:
             raise UserError(gettext(
                 'account_code_digits.invalid_code_digits',
                     account_digits=len(code),
