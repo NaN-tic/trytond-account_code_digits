@@ -51,7 +51,8 @@ class AccountTemplate(metaclass=PoolMeta):
 
         res = super(AccountTemplate, self)._get_account_value(account)
         digits = config.default_account_code_digits
-        if (not self.childs and res.get('code') and digits is not None):
+        if (self.type and not self.parent and res.get('code')
+                and digits is not None):
             digits = int(digits - len(res['code']))
             if '%' in res['code']:
                 res['code'] = res['code'].replace('%', '0' * (digits + 1))
@@ -79,7 +80,7 @@ class Account(metaclass=PoolMeta):
     def check_digits(self, digits):
         # Only the first item of code is checked: "570000 (1)" -> "570000"
         code = self.code.split(' ')[0]
-        if not self.childs and len(code) != digits:
+        if self.type and self.parent and len(code) != digits:
             raise UserError(gettext(
                 'account_code_digits.invalid_code_digits',
                     account_digits=len(code),
