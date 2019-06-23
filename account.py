@@ -48,16 +48,15 @@ class AccountTemplate(metaclass=PoolMeta):
         pool = Pool()
         Config = pool.get('account.configuration')
         config = Config(1)
-
         res = super(AccountTemplate, self)._get_account_value(account)
         digits = config.default_account_code_digits
-        if (self.type and self.parent and res.get('code')
-                and digits is not None):
-            digits = int(digits - len(res['code']))
-            if '%' in res['code']:
-                res['code'] = res['code'].replace('%', '0' * (digits + 1))
+        if (self.type and self.parent and digits is not None):
+            digits = int(digits - len(res.get('code','')))
+            if '%' in res.get('code', self.code):
+                res['code'] = res.get('code', self.code).replace(
+                    '%', '0' * (digits + 1))
             else:
-                res['code'] = res['code'] + '0' * digits
+                res['code'] = res.get('code', self.code) + '0' * digits
         # Don't upgrade code if the correct digits value is computed
         if account and res.get('code', '') == account.code:
             del res['code']
