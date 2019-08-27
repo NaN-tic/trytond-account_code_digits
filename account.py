@@ -49,9 +49,9 @@ class AccountTemplate(metaclass=PoolMeta):
         Config = pool.get('account.configuration')
         config = Config(1)
         res = super(AccountTemplate, self)._get_account_value(account)
-        digits = config.default_account_code_digits
-        if (self.type and self.parent and digits is not None):
-            digits = int(digits - len(res.get('code','')))
+        config_digits = config.default_account_code_digits
+        if (self.type and self.parent and config_digits is not None):
+            digits = int(config_digits - len(res.get('code', self.code)))
             if '%' in res.get('code', self.code):
                 res['code'] = res.get('code', self.code).replace(
                     '%', '0' * (digits + 1))
