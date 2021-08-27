@@ -51,7 +51,7 @@ class AccountTemplate(metaclass=PoolMeta):
         res = super(AccountTemplate, self)._get_account_value(account)
         config_digits = config.default_account_code_digits
         if (self.type and self.parent and config_digits is not None):
-            digits = int(config_digits - len(res.get('code', self.code)))
+            digits = int(config_digits - len(res.get('code', self.code) or ''))
             if '%' in res.get('code', self.code):
                 res['code'] = res.get('code', self.code).replace(
                     '%', '0' * (digits + 1))
@@ -85,6 +85,7 @@ class Account(metaclass=PoolMeta):
                     account_digits=len(code),
                     account=self.rec_name,
                     digits=digits))
+
 
 class CreateChartAccount(metaclass=PoolMeta):
     __name__ = 'account.create_chart.account'
