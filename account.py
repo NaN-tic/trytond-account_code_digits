@@ -51,12 +51,13 @@ class AccountTemplate(metaclass=PoolMeta):
         res = super(AccountTemplate, self)._get_account_value(account)
         config_digits = config.default_account_code_digits
         if (self.type and self.parent and config_digits is not None):
-            digits = int(config_digits - len(res.get('code', self.code) or ''))
-            if '%' in res.get('code', self.code):
-                res['code'] = res.get('code', self.code).replace(
+            code = res.get('code', self.code) or ''
+            digits = int(config_digits - len(code))
+            if '%' in code:
+                res['code'] = code.replace(
                     '%', '0' * (digits + 1))
             else:
-                res['code'] = res.get('code', self.code) + '0' * digits
+                res['code'] = code + '0' * digits
         # Don't upgrade code if the correct digits value is computed
         if account and res.get('code', '') == account.code:
             del res['code']
