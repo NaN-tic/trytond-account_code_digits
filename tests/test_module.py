@@ -1,18 +1,18 @@
-# This file is part of the account_code_digits module for Tryton.
-# The COPYRIGHT file at the top level of this repository contains the full
-# copyright notices and license terms.
-import unittest
+
+# This file is part of Tryton.  The COPYRIGHT file at the top level of
+# this repository contains the full copyright notices and license terms.
+
 from trytond.pool import Pool
-import trytond.tests.test_tryton
 from trytond.exceptions import UserError
 from trytond.tests.test_tryton import ModuleTestCase, with_transaction
 
-from trytond.modules.company.tests import create_company, set_company
+from trytond.modules.company.tests import (CompanyTestMixin, create_company,
+    set_company)
 from trytond.modules.account.tests import create_chart
 
 
-class AccountCodeDigitsTestCase(ModuleTestCase):
-    'Test Account Code Digits module'
+class AccountCodeDigitsTestCase(CompanyTestMixin, ModuleTestCase):
+    'Test AccountCodeDigits module'
     module = 'account_code_digits'
 
     @with_transaction()
@@ -49,8 +49,4 @@ class AccountCodeDigitsTestCase(ModuleTestCase):
             self.assertEqual(non_view.code, '0000')
 
 
-def suite():
-    suite = trytond.tests.test_tryton.suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-            AccountCodeDigitsTestCase))
-    return suite
+del ModuleTestCase
