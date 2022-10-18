@@ -29,6 +29,10 @@ class Configuration(metaclass=PoolMeta):
             return pool.get('account.configuration.default_account')
         return super(Configuration, cls).multivalue_model(field)
 
+    @staticmethod
+    def default_force_digits():
+        return True
+
 
 class ConfigurationDefaultAccount(metaclass=PoolMeta):
     __name__ = 'account.configuration.default_account'
@@ -99,6 +103,8 @@ class CreateChartAccount(metaclass=PoolMeta):
         pool = Pool()
         Config = pool.get('account.configuration')
         config = Config(1)
+        if not config.default_account_code_digits:
+            return 8
         return config.default_account_code_digits
 
 
