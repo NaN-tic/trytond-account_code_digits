@@ -33,12 +33,14 @@ class AccountCodeDigitsTestCase(CompanyTestMixin, ModuleTestCase):
             view.name = 'view'
             view.code = '0'
             view.save()
-            non_view, = Account.search([
-                    ('type', '!=', 'None'),
-                    ], limit=1)
 
+            non_view, = Account.search([
+                    ('type', '!=', None),
+                    ('parent', '!=', None),
+                    ], limit=1)
             self.assertRaises(UserError, Account.write, [non_view],
                 {'code': '000'})
+
             Account.write([view], {'code': '0'})
             Account.write([non_view], {'code': '000000'})
             self.assertEqual(view.code, '0')
