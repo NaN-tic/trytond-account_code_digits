@@ -103,7 +103,7 @@ class CreateChartAccount(metaclass=PoolMeta):
         pool = Pool()
         Config = pool.get('account.configuration')
         config = Config(1)
-        if not config.default_account_code_digits:
+        if config.default_account_code_digits is None:
             return 8
         return config.default_account_code_digits
 
