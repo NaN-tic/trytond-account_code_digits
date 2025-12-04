@@ -4,11 +4,7 @@
 from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
 from trytond.i18n import gettext
-from trytond.exceptions import UserError
-
-__all__ = ['Configuration', 'ConfigurationDefaultAccount', 'AccountTemplate',
-    'Account', 'CreateChartAccount', 'CreateChart', 'UpdateChartStart',
-    'UpdateChart']
+from trytond.model.exceptions import ValidationError
 
 
 class Configuration(metaclass=PoolMeta):
@@ -85,7 +81,7 @@ class Account(metaclass=PoolMeta):
         # Only the first item of code is checked: "570000 (1)" -> "570000"
         code = (self.code or '').split(' ')[0]
         if self.type and self.parent and len(code) != digits:
-            raise UserError(gettext(
+            raise ValidationError(gettext(
                 'account_code_digits.invalid_code_digits',
                     account_digits=len(code),
                     account=self.rec_name,
