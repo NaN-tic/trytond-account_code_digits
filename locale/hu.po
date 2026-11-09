@@ -1,0 +1,98 @@
+#
+msgid ""
+msgstr ""
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "field:account.configuration,default_account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Főkönyvi számlaszám számjegyei"
+
+msgctxt "field:account.configuration,force_digits:"
+msgid "Force Digits"
+msgstr "Számjegyszám kényszerítése"
+
+msgctxt ""
+"field:account.configuration.default_account,default_account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Főkönyvi számlaszám számjegyei"
+
+msgctxt "field:account.create_chart.account,account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Főkönyvi számlaszám számjegyei"
+
+msgctxt "field:account.update_chart.start,account_code_digits:"
+msgid "Account Code Digits"
+msgstr "Főkönyvi számlaszám számjegyei"
+
+msgctxt "help:account.configuration,default_account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr "Az összes nem összesítő számlánál használandó számjegyek száma."
+
+msgctxt "help:account.configuration,force_digits:"
+msgid ""
+"If marked it won't be allowed to create a non-view account with a diferent "
+"number of digits than the number used on the selected on the chart creation."
+msgstr ""
+"Ha be van jelölve, nem hozható létre olyan nem összesítő számla, amelynek "
+"számjegyszáma eltér a számlatükör létrehozásakor kiválasztott értéktől."
+
+msgctxt "help:account.create_chart.account,account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr "Az összes nem összesítő számlánál használandó számjegyek száma."
+
+msgctxt "help:account.update_chart.start,account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr "Az összes nem összesítő számlánál használandó számjegyek száma."
+
+#, python-format
+msgctxt "model:ir.message,text:invalid_code_digits"
+msgid ""
+"The number of code digits %(account_digits)d of account \"%(account)s\" must"
+" be %(digits)d."
+msgstr ""
+"A(z) „%(account)s” számlaszám %(account_digits)d számjegye helyett "
+"%(digits)d számjegy szükséges."
+
+msgctxt "view:account.configuration:"
+msgid "Account Chart"
+msgstr "Számlatükör"
+
+msgctxt "wizard_button:account.create_chart,account,create_account:"
+msgid "Create"
+msgstr "Létrehozás"
+
+msgctxt "wizard_button:account.create_chart,account,end:"
+msgid "Cancel"
+msgstr "Mégse"
+
+msgctxt "wizard_button:account.create_chart,properties,create_properties:"
+msgid "Create"
+msgstr "Létrehozás"
+
+msgctxt "wizard_button:account.create_chart,properties,end:"
+msgid "Cancel"
+msgstr "Mégse"
+
+msgctxt "wizard_button:account.create_chart,start,account:"
+msgid "Ok"
+msgstr "Rendben"
+
+msgctxt "wizard_button:account.create_chart,start,end:"
+msgid "Cancel"
+msgstr "Mégse"
+
+msgctxt "wizard_button:account.update_chart,start,end:"
+msgid "Cancel"
+msgstr "Mégse"
+
+msgctxt "wizard_button:account.update_chart,start,update:"
+msgid "Update"
+msgstr "Frissítés"
+
+msgctxt "wizard_button:account.update_chart,succeed,end:"
+msgid "Ok"
+msgstr "Rendben"
