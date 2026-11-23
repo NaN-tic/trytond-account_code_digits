@@ -5,6 +5,7 @@ from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
 from trytond.i18n import gettext
 from trytond.model.exceptions import ValidationError
+from trytond.transaction import Transaction
 
 
 class Configuration(metaclass=PoolMeta):
@@ -111,10 +112,11 @@ class CreateChart(metaclass=PoolMeta):
         pool = Pool()
         Config = pool.get('account.configuration')
         if hasattr(self.account, 'account_code_digits'):
-            config = Config(1)
-            config.default_account_code_digits = (
-                self.account.account_code_digits)
-            config.save()
+            with Transaction().set_context(company=self.account.company.id):
+                config = Config(1)
+                config.default_account_code_digits = (
+                    self.account.account_code_digits)
+                config.save()
         return super(CreateChart, self).transition_create_account()
 
 
@@ -138,7 +140,8 @@ class UpdateChart(metaclass=PoolMeta):
     def transition_update(self):
         pool = Pool()
         Config = pool.get('account.configuration')
-        config = Config(1)
-        config.default_account_code_digits = self.start.account_code_digits
-        config.save()
-        return super(UpdateChart, self).transition_update()
+        with Transaction().set_context(company=self.start.account.company.id):
+            config = Config(1)
+            config.default_account_code_digits = self.start.account_code_digits
+            config.save()
+            return super(UpdateChart, self).transition_update()
