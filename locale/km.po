@@ -1,0 +1,101 @@
+#
+msgid ""
+msgstr ""
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "field:account.configuration,default_account_code_digits:"
+msgid "Account Code Digits"
+msgstr "ចំនួនខ្ទង់នៃកូដគណនី"
+
+msgctxt "field:account.configuration,force_digits:"
+msgid "Force Digits"
+msgstr "បង្ខំឱ្យប្រើចំនួនខ្ទង់កំណត់"
+
+msgctxt ""
+"field:account.configuration.default_account,default_account_code_digits:"
+msgid "Account Code Digits"
+msgstr "ចំនួនខ្ទង់នៃកូដគណនី"
+
+msgctxt "field:account.create_chart.account,account_code_digits:"
+msgid "Account Code Digits"
+msgstr "ចំនួនខ្ទង់នៃកូដគណនី"
+
+msgctxt "field:account.update_chart.start,account_code_digits:"
+msgid "Account Code Digits"
+msgstr "ចំនួនខ្ទង់នៃកូដគណនី"
+
+msgctxt "help:account.configuration,default_account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr ""
+"ចំនួនខ្ទង់ដែលត្រូវប្រើសម្រាប់គណនីទាំងអស់ដែលមិនមែនជាគណនីសម្រាប់បង្ហាញតែប៉ុណ្ណោះ។"
+
+msgctxt "help:account.configuration,force_digits:"
+msgid ""
+"If marked it won't be allowed to create a non-view account with a diferent "
+"number of digits than the number used on the selected on the chart creation."
+msgstr ""
+"បើធីក មិនអាចបង្កើតគណនីដែលមិនមែនសម្រាប់បង្ហាញតែប៉ុណ្ណោះ "
+"ដោយមានចំនួនខ្ទង់ខុសពីចំនួនដែលបានជ្រើសរើសពេលបង្កើតប្លង់គណនី។"
+
+msgctxt "help:account.create_chart.account,account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr ""
+"ចំនួនខ្ទង់ដែលត្រូវប្រើសម្រាប់គណនីទាំងអស់ដែលមិនមែនជាគណនីសម្រាប់បង្ហាញតែប៉ុណ្ណោះ។"
+
+msgctxt "help:account.update_chart.start,account_code_digits:"
+msgid "Number of digits to be used for all non-view accounts."
+msgstr ""
+"ចំនួនខ្ទង់ដែលត្រូវប្រើសម្រាប់គណនីទាំងអស់ដែលមិនមែនជាគណនីសម្រាប់បង្ហាញតែប៉ុណ្ណោះ។"
+
+#, python-format
+msgctxt "model:ir.message,text:invalid_code_digits"
+msgid ""
+"The number of code digits %(account_digits)d of account \"%(account)s\" must "
+"be %(digits)d."
+msgstr ""
+"កូដគណនី «%(account)s» មាន %(account_digits)d ខ្ទង់ ប៉ុន្តែត្រូវមាន %(digits)d"
+" ខ្ទង់។"
+
+msgctxt "view:account.configuration:"
+msgid "Account Chart"
+msgstr "ប្លង់គណនី"
+
+msgctxt "wizard_button:account.create_chart,account,create_account:"
+msgid "Create"
+msgstr "បង្កើត"
+
+msgctxt "wizard_button:account.create_chart,account,end:"
+msgid "Cancel"
+msgstr "បោះបង់"
+
+msgctxt "wizard_button:account.create_chart,properties,create_properties:"
+msgid "Create"
+msgstr "បង្កើត"
+
+msgctxt "wizard_button:account.create_chart,properties,end:"
+msgid "Cancel"
+msgstr "បោះបង់"
+
+msgctxt "wizard_button:account.create_chart,start,account:"
+msgid "Ok"
+msgstr "យល់ព្រម"
+
+msgctxt "wizard_button:account.create_chart,start,end:"
+msgid "Cancel"
+msgstr "បោះបង់"
+
+msgctxt "wizard_button:account.update_chart,start,end:"
+msgid "Cancel"
+msgstr "បោះបង់"
+
+msgctxt "wizard_button:account.update_chart,start,update:"
+msgid "Update"
+msgstr "ធ្វើបច្ចុប្បន្នភាព"
+
+msgctxt "wizard_button:account.update_chart,succeed,end:"
+msgid "Ok"
+msgstr "យល់ព្រម"
